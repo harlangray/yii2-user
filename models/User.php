@@ -427,9 +427,11 @@ class User extends ActiveRecord implements IdentityInterface
                 'class'          => Profile::className(),
                 'user_id'        => $this->id,
                 'gravatar_email' => $this->email,
+                'location'         => \Yii::$app->user->identity->profile->location ,//added by Harlan. The creator's location will go to the created user
             ]);
             $profile->save(false);
         }
+        
         parent::afterSave($insert, $changedAttributes);
     }
 

@@ -22,7 +22,7 @@
 <?php // echo $form->field($profile, 'location') Remarked By Harlan ?>
 <?= $form->field($profile, 'location')->dropDownList(
          \yii\helpers\ArrayHelper::map(app\models\PrisonInstitute::find()->all(), 'pin_id', 'pin_prison_institute_name'),           // Flat array ('id'=>'label')
-            ['prompt'=>'Select an Institute']    // options
+            ['prompt'=>'--All Institutes--']    // options
         ); ?>
 <?= $form->field($profile, 'gravatar_email') ?>
 <?= $form->field($profile, 'bio')->textarea() ?>
