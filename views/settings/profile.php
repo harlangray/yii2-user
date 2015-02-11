@@ -58,7 +58,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     echo $form->field($model->locationMod, 'pin_prison_institute_name')->textInput(['readonly' => true]); 
                 }
                 else{
-                     echo $form->field($model, 'location')->textInput(['readonly' => true, 'value' => 'All Locations']);  
+                     echo $form->field($model, 'location')->textInput(['readonly' => true, 'placeHolder' => 'All Locations']);  
                 }
                 ?> 
                  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
