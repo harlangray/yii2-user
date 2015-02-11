@@ -51,8 +51,18 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'website') ?>
 
-                <?= $form->field($model, 'location') ?>
-
+                 <!--Remarked and Added By Harlan-->
+                <?php // $form->field($model, 'location') ?>
+                <?php 
+                if(isset($model->locationMod)){
+                    echo $form->field($model->locationMod, 'pin_prison_institute_name')->textInput(['readonly' => true]); 
+                }
+                else{
+                     echo $form->field($model, 'location')->textInput(['readonly' => true, 'value' => 'All Locations']);  
+                }
+                ?> 
+                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                 
                 <?= $form->field($model, 'gravatar_email')->hint(\yii\helpers\Html::a(Yii::t('user', 'Change your avatar at Gravatar.com'), 'http://gravatar.com')) ?>
 
                 <?= $form->field($model, 'bio')->textarea() ?>
