@@ -93,7 +93,7 @@ class Profile extends ActiveRecord
     
     //Added By Harlan
     public function getLocationMod(){
-        return $this->hasOne(\app\base\PrisonInstitute::className(), ['pin_id' => 'location']); 
+        return $this->hasOne(\app\models\PrisonInstitute::className(), ['pin_id' => 'location']); 
     }
     //~~~~~~~~~~~~~~~
 }
